@@ -12,19 +12,18 @@ function GetCharacter(source: number) {
     }
 
     const character = User.getUsedCharacter;
-    //console.log(JSON.stringify(character))
-    // Ensure that `character` exists before attempting to access its properties
+  
     if (!character) {
         return;
     }
 
     return {
-        identifier: character.identifier as string,  // Fixed typo from `idenfifier` to `identifier`
+        identifier: character.identifier as string,  
         charidentifier: character.charIdentifier as string,
         group: character.group as string,
         job: character.job as string,
         jobgrade: character.jobGrade as number,
-        joblabel: character.jobLabel as string,  // Fixed property access (removed `character.` prefix)
+        joblabel: character.jobLabel as string, 
         money: character.money as number,
         gold: character.gold as number,
         rol: character.rol as number,
@@ -34,7 +33,7 @@ function GetCharacter(source: number) {
         fullname: character.firstname + ' ' + character.lastname,
         status: character.status as string,
         coords: character.coords as string,
-        isdead: character.isdead as number,  // Fixed property name from `character.isdead` to `isdead`
+        isdead: character.isdead as number,  
         skin: character.skin as string,
         comps: character.comps as string,
         comptints: character.compTints as string,
@@ -63,73 +62,73 @@ function SetMeta(type: string, data: any, flag: boolean) {
 
     const character = User.getUsedCharacter();
 
-    // Ensure that `character` exists before attempting to access its properties
+ 
     if (!character) {
         return { success: false, message: "Character not found" };
     }
 
     try {
-        // Perform different operations based on the `type` parameter
+    
         switch (type) {
             case "job":
-                character.setJob(data, flag); // `data` should be the job name
+                character.setJob(data, flag); 
                 break;
             case "jobgrade":
-                character.setJobGrade(data, flag); // `data` should be the job grade
+                character.setJobGrade(data, flag); 
                 break;
             case "joblabel":
-                character.setJobLabel(data); // `data` should be the job label
+                character.setJobLabel(data); 
                 break;
             case "group":
-                character.setGroup(data, flag); // `data` should be the group name
+                character.setGroup(data, flag); 
                 break;
             case "rol":
-                character.setRol(data); // `data` should be the role amount
+                character.setRol(data);
                 break;
             case "xp":
-                character.setXp(data); // `data` should be the experience points
+                character.setXp(data); 
                 break;
             case "firstname":
-                character.setFirstname(data); // `data` should be the first name
+                character.setFirstname(data); 
                 break;
             case "lastname":
-                character.setLastname(data); // `data` should be the last name
+                character.setLastname(data);
                 break;
             case "skin":
-                character.updateSkin(data); // `data` should be the skin info
+                character.updateSkin(data);
                 break;
             case "comps":
-                character.updateComps(data); // `data` should be the components info
+                character.updateComps(data); 
                 break;
             case "comptints":
-                character.updateCompTints(data); // `data` should be the component tints info
+                character.updateCompTints(data); 
                 break;
             case "addCurrency":
-                character.addCurrency(data.type, data.amount); // `data` should be an object with type and amount
+                character.addCurrency(data.type, data.amount); 
                 break;
             case "removeCurrency":
-                character.removeCurrency(data.type, data.amount); // `data` should be an object with type and amount
+                character.removeCurrency(data.type, data.amount); 
                 break;
             case "addXp":
-                character.addXp(data); // `data` should be the XP amount
+                character.addXp(data); 
                 break;
             case "removeXp":
-                character.removeXp(data); // `data` should be the XP amount
+                character.removeXp(data);
                 break;
             case "age":
-                character.setAge(data); // `data` should be the age
+                character.setAge(data); 
                 break;
             case "charDescription":
-                character.setCharDescription(data); // `data` should be the character description
+                character.setCharDescription(data); 
                 break;
             case "nickName":
-                character.setNickName(data); // `data` should be the nickname
+                character.setNickName(data);
                 break;
             case "gender":
-                character.setGender(data); // `data` should be the gender
+                character.setGender(data);
                 break;
             case "updateInvCapacity":
-                character.updateInvCapacity(data); // `data` should be the amount to change the inventory capacity
+                character.updateInvCapacity(data); 
                 break;
             default:
                 return { success: false, message: "Unknown type" };
@@ -141,11 +140,96 @@ function SetMeta(type: string, data: any, flag: boolean) {
     }
 }
 
-// Expose the SetMeta function to be used by other scripts
 
-
-
-
-// Expose the GetCharacter function to be used by other scripts
 exp("GetCharacter", GetCharacter);
 exp("SetMeta", SetMeta);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Eulen Lifetime https://eulen.cc/DiscordInvite
