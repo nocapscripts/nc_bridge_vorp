@@ -1,6 +1,6 @@
-## Usage
+#Usage
 
-# Server side usage
+## Server side usage
 ````
 exports["redux_bridge"]:GetCharacter(source)
 ````
