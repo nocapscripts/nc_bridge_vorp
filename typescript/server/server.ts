@@ -2,6 +2,23 @@
 
 const exp = global.exports;
 const Core = exp["vorp_core"].GetCore();
+const lib = exp["redux_lib"];
+const Inv = exp["vorp_inventory"];
+import { onClientCallback, triggerClientCallback } from '@overextended/ox_lib/server';
+
+
+onClientCallback('test:server', () => {
+    
+    let src = global.source;
+    const data = GetCharacter(src)
+
+    
+    return data
+  
+});
+// Assuming `lib`, `Core`, and `exports` are objects that exist within your system's context
+
+
 
 function GetCharacter(source: number) {
     let src = source || global.source;
@@ -46,6 +63,21 @@ function GetCharacter(source: number) {
 
     };
 };
+
+function GetUser(source: number) {
+    let src = source || global.source;
+    const User = Core.getUserByCharId(src)
+    if (!User) { return;}
+
+    if (User) {
+        return {
+            group: User.getGroup,
+            hours: User.hours,
+            source: User.source
+        }
+    }
+   
+}
 
 
 function SetMeta(type: string, data: any, flag: boolean) {
@@ -143,7 +175,7 @@ function SetMeta(type: string, data: any, flag: boolean) {
 
 exp("GetCharacter", GetCharacter);
 exp("SetMeta", SetMeta);
-
+exp("GetUser", GetUser);
 
 
 
