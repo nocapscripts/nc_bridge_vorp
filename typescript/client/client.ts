@@ -3,7 +3,7 @@ const exp = global.exports;
 
 function GetCharacter() {
         // Triggering a server callback with the name 'test:server', sending arguments and awaiting the response.
-        const response = triggerServerCallback<{ data: string }>('test:server', source);
+        const response = triggerServerCallback<{ data: string }>('redux_bridge:getCharacter', source);
 
         // Logging the response from the server (expected response contains a 'serverValue' of type number)
         //console.log('Response from server:', response["money"]);
